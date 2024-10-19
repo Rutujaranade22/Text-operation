@@ -1,75 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text operation</title>
     <style>
-        body{
-            background-color:rgb(228, 224, 225);
+        body {
+            background-color: rgb(228, 224, 225);
         }
-        .head{
-            color:493628 ;
+
+        .head {
+            color: 493628;
             text-align: center;
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
- 
-        }
-
-         
-        
-        .ip{
-          width: 70%;
-          display: block;
-          margin: 20px auto;
-          min-height: 100px;
-          padding: 10px;
-          border-radius: 5px; 
 
         }
-        .btn-con{
-           
+
+
+
+        .ip {
+            width: 70%;
+            display: block;
+            margin: 20px auto;
+            min-height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+
+        .btn-con {
+
             width: 70%;
             display: flex;
             justify-content: space-between;
-        margin: 20px auto;}
+            margin: 20px auto;
+        }
 
- 
-         .btn{
-           width: 150px;
-           padding: 8px 15px;
-           font-size: 18px;
-           border: none;
-           cursor: pointer;
-           border-radius: 30px;
-           background-color:rgb(171, 136, 109) ;
-           color:493628 ;
-           
-           }
-           .btn:hover{
-            background-color: rgb(73, 54, 40) ;
+
+        .btn {
+            width: 150px;
+            padding: 8px 15px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            background-color: rgb(171, 136, 109);
+            color: 493628;
+
+        }
+
+        .btn:hover {
+            background-color: rgb(73, 54, 40);
             color: beige;
-           }
+        }
     </style>
 </head>
+
 <body>
     <h1 class="head">Text Operation</h1>
     <div class=" head">
-        <input type="text" id="input" class="ip" placeholder="Input of the question..."/>
-        </div>
+        <input type="text" id="input" class="ip" placeholder="Input of the question..." />
+    </div>
 
-        <div class="head">
-            <input type="text" id="output" class="ip" placeholder="Output of the question..."/>
-         </div>
-        <div class="btn-con">
-            <button type="button" class="btn">Upper case</button>
-            <button type="button" class="btn">Lower case</button>
-            <button type="button" class="btn">Word Count</button>
-            <button type="button" class="btn">Character Count</button>
+    <div class="head">
+        <input type="text" id="output" class="ip" placeholder="Output of the question..." />
+    </div>
+    <div class="btn-con">
+        <button type="button" class="btn" onclick="upperCase()">Upper case</button>
+        <button type="button" class="btn" onclick="lowerCase()">Lower case</button>
+        <button type="button" class="btn" onclick="wordCount()">Word Count</button>
+        <button type="button" class="btn" onclick="characterCount()">Character Count</button>
 
-        </div>
-        <script>
-            
-        </script>
+    </div>
+    <script>
+        const inputElement = document.getElementById("input");
+        const outputElement = document.getElementById("output");
+        function upperCase() {
+            outputElement.value = inputElement.value.toUpperCase();
+
+
+        }
+        function lowerCase() {
+            outputElement.value = inputElement.value.toLowerCase();
+
+        }
+        function wordCount() {
+            const totalWords = inputElement.value.split("").length;
+
+            outputElement.value = `Word count:  ${totalWords}`;
+
+        }
+        function characterCount() {
+            outputElement.value = `Character Count:${inputElement.value.length}`;
+
+        }
+    </script>
 </body>
+
 </html>
