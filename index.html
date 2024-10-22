@@ -88,15 +88,14 @@
 
         }
         function wordCount() {
-            const totalWords = inputElement.value.split("").length;
+    const totalWords = inputElement.value.trim().split(/\s+/).filter(word => word.length > 0).length;
+    outputElement.value = `Word count: ${totalWords}`;
+}
 
-            outputElement.value = `Word count:  ${totalWords}`;
+function characterCount() {
+    outputElement.value = `Character Count: ${inputElement.value.length}`;
+}
 
-        }
-        function characterCount() {
-            outputElement.value = `Character Count:${inputElement.value.length}`;
-
-        }
     </script>
 </body>
 
